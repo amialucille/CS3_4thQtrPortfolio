@@ -54,20 +54,23 @@
 ### Step 1 (Static vs Relative):
 
 - Add in css ```position: relative; top: 20px; left: 20px;``` to .sidebar.
-
 - Guided Question: What changed compared to the default static positioning? Try to give different values to top and left or you can change it to bottom, right.
+
+  Upon applying the changes to the code, the .sidebar moved down and to the right from its original position. In comparison to static positioning, relative positioning allows movement while still keeping the element in the normal flow, meaning its original space is still preserved.
 
 ### Step 2 (Fixed):
 
 - Add in css ```position: fixed; bottom: 0; width: 100%;``` to .footer.
-
 - Guided Question: What happens when you scroll the page? Why does the footer behave differently from position relative?
+
+  With position: fixed, the .footer stays at the bottom of the screen even when scrolling. This is because it is positioned relative to the viewport, not the document flow, unlike relative positioning.
 
 ### Step 3 (Absolute):
 
 - Add in css ```position: absolute; top: 66px; left: 200px;``` to .content.
-
 - Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?
+
+  Using position: absolute placed the .content at a fixed location based on its nearest positioned parent. It is removed from the normal flow, so it no longer affects other elements. Unlike fixed, it moves along with its parent when scrolling.
 
 ### Step 4 : (Absolute)
 
@@ -85,8 +88,9 @@
 ```
 
 - Give .content a z-index: 1.
-
 - Guided Question: Why does the notice appear on top of the content? What happens if you swap the z‑index values?
+
+  The .notice appears on top of .content because it has a higher z-index. This property controls which element appears in front. If the values are swapped, .content will cover the notice. Setting .content to position: relative allows .notice to be positioned at its top-right corner.
 
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
@@ -97,9 +101,17 @@
 
     a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
 
+      Static is the default layout. Relative shifts an element without removing it from flow. Absolute positions an element based on its parent and removes it from flow. Fixed anchors an element to the viewport. Sticky acts like relative until a scroll point, then becomes fixed.
+
     b. How does absolute positioning depend on its parent element?
+
+      Absolute positioning depends on the nearest parent with a non-static position. If none exists, it uses the body as reference.
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
 
+      Sticky scrolls normally until it reaches a set point, then stays fixed. Fixed always stays in the same position on screen.
+
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+
+      Positioning helps highlight important content. For example, a fixed “Register” button stays visible, absolute positioning places labels precisely, and sticky can keep reminders visible while scrolling.
 
